@@ -1,1 +1,1 @@
-"# Internal-Threat-Evaluation-Index" 
+Internal-Threat-Evaluation-Index
