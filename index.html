@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Threat Evaluation Index</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
+        .container { max-width: 800px; margin: auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 10px; color: #555; font-weight: bold; }
+        input[type="range"] { width: 100%; }
+        output { display: block; text-align: center; margin-top: 5px; font-size: 1.2em; color: #007BFF; }
+        button { padding: 12px 24px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 20px auto; font-size: 1em; }
+        button:hover { background-color: #0056b3; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; text-align: center; font-size: 1.2em; }
+        .non-toxic { background-color: #e9f7ef; border: 1px solid #d4edda; color: #155724; }
+        .toxic { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Internal Threat Evaluation Index</h1>
+        <div><strong><h3>Skill Factor (SF)</h3></strong></div>
+        <div class="form-group">
+            <label for="q8">Q8: ඔබගේ වෘත්තියේ නිපුනතාවය වැඩි දියුණු කරගැනීම සදහා නව පාඨමාලාවන් හැදෑරීමේ අවශ්‍යතාවය? (අවම 1 - උපරිම 10) </label>
+            <input type="range" id="q8" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q9">Q9:ඔබට ලැබෙන තාක්ෂණික වගකීම ඉටුකිරීමට ඔබ සතු නිපුනතාවය? (අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q9" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div><strong><h3>Work Stress Factor (WSF)</h3></strong></div>
+        <div class="form-group">
+            <label for="q10">Q10: ඔබගේ අංශයෙහි පවතින තාක්ෂනවේදින් පුරප්පාඩුව නිසා ඔබ මත පැවරෙන සියලු රාජකරීන් නියමිත තාක්ෂණික නිරවද්‍යභාවයෙන් සහ අපේක්ෂිත කාර්යක්‍ෂමතාවයෙන් යුතුව කිරීමට ඔබට ඇති හැකියාව ? (අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q10" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q11">Q11: තාක්ෂණික රාජකාරි වලින් බැහැරව ඔබට වෙනත් යුහ රාජකාරි පැවරීමේ බහුලතාවය ?(අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q11" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q12">Q12: ඔබට මාසිකව නියමිත නිවාඩු ප්‍රමාණය ලබා ගැනීමේ හැකියාව? (අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q12" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div><strong><h3>Work Environment Factor (WEF)</h3></strong></div>
+        <div class="form-group">
+            <label for="q13">Q13: අවසන් වරට මාස කීයකට පෙරද ඔබව වගකිවයුත්තකු විසින් සම්මුඛ සාකච්ඡවකට භාජනය කර ඇත්තේ? (සැලකිය යුතුයි : 1. එක් දිනකට පෙර වුවත් මාස 1 ට පෙර ලෙස තෝරන්න. 2. කිසි දිනක ඔබ සම්මුඛ සාකච්ඡවක් සදහා මුහුණදී නොමැති නම් මාස 10 පෙර ලෙස යොදන්න)</label>
+            <input type="range" id="q13" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q14">Q14: වර්තමාන අංශයෙන් වෙනත් අංශයක්/කදවුරක් වෙත ස්ථානමාරුවක් ලබා ගැනීමට ඔබට ඇති අවශ්‍යතාවය ? (අවම 1 - උපරිම 10) </label>
+            <input type="range" id="q14" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q15">Q15: ඔබ සේවය යෙදී සිටින අංශයේ අනෙකුත් අයවලුන් සමග ඔබගේ ඇති සම්බන්ධතාවය ? (අවම 1 - උපරිම 10) </label>
+            <input type="range" id="q15" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div><strong><h3>Family and Financial Factor (FFF)</h3></strong></div>
+        <div class="form-group">
+            <label for="q16">Q16: ඔබට ලැබෙන වැටුප මගින් ඔබගේ පුද්ගලික සහ පවුලේ වියදම් කළමණාකාරනය කර ගැනීමේ හැකියාව? (අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q16" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q17">Q17: ඔබගේ පවුලේ අයවලුන් ඔබගේ යුහ වෘත්තීය පිළිබද දක්වන ආකල්පය ? (ඉතාමත් යහපත් 1 - ඉතාමත් අයහපත් 10)</label>
+            <input type="range" id="q17" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <div class="form-group">
+            <label for="q18">Q18: රට වෙනුවෙන් සපයනු ලබන සේවය නිසා ඔබට රැකියාවේ යෙදීමෙන් ඇති මානසික තෘප්තිය? (අවම 1 - උපරිම 10)</label>
+            <input type="range" id="q18" min="1" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+            <output>5</output>
+        </div>
+        <button onclick="calculate()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            const q8 = parseInt(document.getElementById('q8').value);
+            const q9 = parseInt(document.getElementById('q9').value);
+            const q10 = parseInt(document.getElementById('q10').value);
+            const q11 = parseInt(document.getElementById('q11').value);
+            const q12 = parseInt(document.getElementById('q12').value);
+            const q13 = parseInt(document.getElementById('q13').value);
+            const q14 = parseInt(document.getElementById('q14').value);
+            const q15 = parseInt(document.getElementById('q15').value);
+            const q16 = parseInt(document.getElementById('q16').value);
+            const q17 = parseInt(document.getElementById('q17').value);
+            const q18 = parseInt(document.getElementById('q18').value);
+
+            if ([q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18].some(value => value < 1 || value > 10)) {
+                alert("Please enter values between 1 and 10 for all questions.");
+                return;
+            }
+
+            const TSF = q8 + q9;
+            const WSSF = (TSF / 20) * 15;
+            const WminTSF = 4.5;
+
+            const TWSF = q10 + q11 + q12;
+            const WSWSF = (TWSF / 30) * 25;
+            const WminTWSF = 7.5;
+
+            const TWEF = q13 + q14 + q15;
+            const WSWEF = (TWEF / 30) * 20;
+            const WminTWEF = 8;
+
+            const TFFF = q16 + q17;
+            const WSFFF = TFFF;
+            const WminTFFF = 8;
+
+            const TSNF = q18;
+            const WSSNF = 2 * TSNF;
+            const WminTSNF = 8;
+
+            const TWS = WSSF + WSWSF + WSWEF + WSFFF + WSSNF;
+            const TWSmin = 36;
+
+            let resultText = `TSF: ${TSF}, WSSF: ${WSSF.toFixed(2)}, WminTSF: ${WminTSF}\n`;
+            resultText += `TWSF: ${TWSF}, WSWSF: ${WSWSF.toFixed(2)}, WminTWSF: ${WminTWSF}\n`;
+            resultText +=`TWEF: ${TWEF}, WSWEF: ${WSWEF.toFixed(2)}, WminTWEF: ${WminTWEF}\n`;
+            resultText += `TFFF: ${TFFF}, WSFFF: ${WSFFF.toFixed(2)}, WminTFFF: ${WminTFFF}\n`;
+            resultText += `TSNF: ${TSNF}, WSSNF: ${WSSNF.toFixed(2)}, WminTSNF: ${WminTSNF}\n`;
+            resultText += `Total Weighted Score (TWS): ${TWS.toFixed(2)}, Minimum Total Weighted Score (TWSmin): ${TWSmin}\n`;
+
+            const resultDiv = document.getElementById('result');
+            if (TWS > TWSmin) {
+                resultDiv.className = 'result non-toxic';
+                resultText += "This candidate is not considered toxic.";
+            } else {
+                resultDiv.className = 'result toxic';
+                resultText += "This candidate is considered toxic.";
+            }
+
+            resultDiv.innerText = resultText;
+        }
+    </script>
+</body>
+</html>
